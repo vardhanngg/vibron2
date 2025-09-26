@@ -1710,4 +1710,61 @@ leave-btn {
     font-size: 11px;
   }
 }
+/* ========================= */
+/* 📱 Mobile Chat Bottom Sheet */
+/* ========================= */
+@media (max-width: 768px) {
+  #chat-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60%;
+    background: rgba(25, 27, 36, 0.98);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1500;
+  }
+
+  /* When chat is open */
+  #chat-container.open {
+    transform: translateY(0);
+  }
+
+  #chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0.5rem;
+  }
+
+  #chat-input {
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--glass-border);
+    background: rgba(0, 0, 0, 0.3);
+    color: var(--text);
+  }
+
+  #send-chat-btn {
+    margin-top: 0.5rem;
+    padding: 0.6rem;
+    border-radius: 8px;
+    background: var(--accent);
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+  }
+}
+  
 }
