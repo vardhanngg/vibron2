@@ -1,3 +1,4 @@
+
 /* =================== */
 /* State */
 let songHistory = JSON.parse(localStorage.getItem('songHistory') || '[]');
@@ -1098,6 +1099,7 @@ function toggleQueue() {
   queueContainer.classList.remove('open');
   document.getElementById('chat-container').classList.toggle('open');
 }*/
+/*
 function toggleChat() {
   const chatContainer = document.getElementById('chat-container');
   if (!chatContainer) {
@@ -1114,8 +1116,20 @@ function toggleChat() {
     console.log("Chat closed");
   }
 }
+*/
 
+function toggleChat() {
+  const chatContainer = document.getElementById('chat-container');
+  if (!chatContainer) {
+    console.error("Chat container not found");
+    return;
+  }
 
+  // Close queue if open
+  queueContainer.classList.remove('open');
+
+  chatContainer.classList.toggle('open');
+}
 
 function emptyQueue() {
   queue = [];
